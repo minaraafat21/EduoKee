@@ -1,0 +1,38 @@
+.card-widget {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .card {
+    width: 100%;
+    /* border: 1px solid #ccc; */
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .card-content {
+    /* padding: 20px; */
+  }
+  
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+  
+  .card-footer button {
+    padding: 8px 16px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .card-footer button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  

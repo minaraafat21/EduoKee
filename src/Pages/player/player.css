@@ -1,0 +1,119 @@
+/* Default styles */
+.screen-container {
+  width: calc(100% - 100px);
+  height: 100%;
+  background-color: #1e2a3e;
+  opacity: 1;
+  display: flex;
+  background-image: repeating-radial-gradient(
+      circle at center left,
+      transparent 0,
+      #233656 100px
+    ),
+    repeating-linear-gradient(#1e2a3e55, #1e2a3e);
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  
+}
+
+/* Styles for left and right player bodies */
+.left-player-body {
+  width: 68%;
+  min-width: 66%;
+  margin-right: 2%;
+  height: 100%;
+  position: relative; /* Ensure relative positioning */
+  z-index: 1; /* Ensure it stays above the right player */
+  display: flex;
+  flex-direction: column;
+}
+.player-container {
+  display: flex;
+  
+  width: 100%;
+}
+
+.audio-player {
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.right-player-body {
+  width: 30%;
+  min-width: 30%; 
+  height: 85%;
+  
+  display: flex;
+  flex-direction: column;
+  
+  overflow: auto;
+}
+
+
+.footer{
+  position: fixed;
+  bottom: 0;
+  right: 18%;
+  width: 60%;
+  height: 16%;
+  background-color: #233656;
+  border-radius: 30px;
+  display: flex;
+  justify-content: space-around;
+  z-index: 1; /* Ensure it stays above so i can press buttons */
+  align-items: center; 
+  border-top: 1px solid #e0e0e0;
+
+  background: linear-gradient(
+    0deg,
+    rgba(30, 42, 62, 1) 0%,
+    rgba(54, 69, 98, 0.1) 100%
+  );
+  -webkit-backdrop-filter: blur(12.5px);
+  backdrop-filter: blur(12.5px);
+}
+/* Mobile view */
+@media only screen and (max-width: 600px) {
+  .screen-container {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* Allow horizontal scrolling if content overflows */
+    width: 100%;
+  
+  }
+  
+  .player-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  
+  .left-player-body,
+  .right-player-body {
+    flex: 1; /* Each player body takes up 50% of the container width */
+    min-width: 100%; /* Set a minimum width to ensure each player body occupies at least half of the screen */
+    max-height: 40rem; /* Set a maximum height to ensure each player body occupies at most half of the screen */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .left-player-body {
+    overflow-y: auto; /* Allow vertical scrolling if content overflows */
+  }
+  .footer{
+    width: 100%;
+    right: 0;
+    border-radius: 0;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1; /* Ensure it stays above so i can press buttons */
+    align-items: center; 
+    
+  }
+  
+}

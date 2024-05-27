@@ -1,0 +1,34 @@
+/* ProgressCircle.css */
+
+.progress-circle {
+    position: relative;
+    width: 120px;
+    height: 120px;
+  }
+  
+  /* svg {
+    transform: rotate(90deg);
+  } */
+  
+  circle {
+    fill: none;
+    transition: stroke-dashoffset 0.35s;
+  }
+  
+  .background {
+    stroke: #e6e6e6;
+  }
+  
+  .progress {
+    stroke: #4caf50;
+  }
+  
+  .score {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+  }
+  

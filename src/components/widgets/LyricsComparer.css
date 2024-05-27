@@ -1,0 +1,24 @@
+.correct {
+    background-color: #4CAF50; /* A nicer shade of green */
+    color: white; /* White text for better contrast */
+    border-radius: 5px; /* Smaller border radius */
+    padding: 2px 5px; /* Some padding around the words */
+    margin: 2px; /* Some margin to separate the words */
+    display: inline-block; /* To apply margin and padding */
+}
+
+.incorrect {
+    background-color: #F44336; /* A nicer shade of red */
+    color: white; /* White text for better contrast */
+    border-radius: 5px; /* Smaller border radius */
+    padding: 2px 5px; /* Some padding around the words */
+    margin: 2px; /* Some margin to separate the words */
+    display: inline-block; /* To apply margin and padding */
+}
+
+.lyrics-comparer {
+    white-space: pre-wrap; /* Preserve spaces and line breaks */
+    font-family: 'Roboto', sans-serif; /* A modern, readable font */
+    font-size: 16px; /* A comfortable font size for reading */
+    line-height: 1.6; /* A comfortable line height for reading */
+}
