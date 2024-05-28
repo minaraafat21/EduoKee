@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import APIKIT from '../../spotify';
-import './library.css';
+import './favourites.css';
 import { IconContext } from 'react-icons';
 import { AiFillPlayCircle } from 'react-icons/ai';
 import { useNavigate } from 'react-router-dom';
@@ -31,7 +31,7 @@ export default function Favourites() {
         }
       })
       .then(function (response) {
-        console.log(response.data.items);
+        // console.log(response.data.items);
         setTracks(response.data.items.map((item) => item.track));
       });
     }, []);
@@ -43,7 +43,7 @@ export default function Favourites() {
     navigate('/player', { state: { id: id } });
   };
   return (
-    <div className="screen-container">
+    
       <div className="library-body">
         {/* <CardWidget pages={pages} /> */}
         {tracks?.map((track) => (
@@ -57,22 +57,11 @@ export default function Favourites() {
             
             <p className="playlist-name">{track.name}</p>
 
-
-
-
-
-
-
-
-
-
-
-
-            
           </div>
         ))}
+        
       </div>
       
-    </div>
+    
   );
 }

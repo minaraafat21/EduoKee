@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import "./audioPlayer.css";
 import Controls from "./controls";
 import ProgressCircle from "./progressCircle";
-import WaveAnimation from "./waveAnimation";
+
 
 export default function AudioPLayer({
   currentTrack,
@@ -101,7 +101,7 @@ export default function AudioPLayer({
     return n > 9 ? "" + n : "0" + n;
   };
   const artists = [];
-  currentTrack?.album?.artists.forEach((artist) => {
+  (currentTrack?.album?.artists || total?.album?.artists || []).forEach((artist) => {
     artists.push(artist.name);
   });
   return (
@@ -117,7 +117,8 @@ export default function AudioPLayer({
         />
 
         <div className="title">
-          <p className="song-title">{currentTrack?.name}</p>
+          {console.log("currentTrack")}
+          <p className="song-title">{currentTrack?.name ? currentTrack.name : total?.name}</p>
           <p className="song-artist">{artists.join(" | ")}</p>
         </div>
 

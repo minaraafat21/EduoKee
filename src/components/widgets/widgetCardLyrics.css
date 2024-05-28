@@ -59,6 +59,7 @@
     color: #c4d0e3;
     font-weight: 500;
     overflow-y:auto;
+    /* overflow-x: hidden; */
     line-height: 1.01; 
   }
   

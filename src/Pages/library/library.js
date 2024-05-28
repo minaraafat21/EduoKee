@@ -5,7 +5,9 @@ import { IconContext } from 'react-icons';
 import { AiFillPlayCircle } from 'react-icons/ai';
 import { useNavigate } from 'react-router-dom';
 import CardWidget from '../../components/widgets/multi-pageCard';
-
+import Favourites from '../favourites/favourites.js';
+import { CiHeart } from "react-icons/ci";
+import { MdOutlinePlaylistPlay } from "react-icons/md";
 export default function Library() {
   const [playlists, setPlaylists] = React.useState(null);
   useEffect(() => {
@@ -32,33 +34,42 @@ export default function Library() {
   };
   return (
     <div className="screen-container">
+      
       <div className="library-body">
         {/* <CardWidget pages={pages} /> */}
-        {playlists?.map((playlist) => (
-          <div
-            className="playlist-card"
-            onClick={() => playPlaylist(playlist.id)}
-          >
-            <img
-              src={playlist.images[0].url}
-              className="playlist-image"
-              alt="playlist"
-            />
+        <div className='playlist-row'>
+        <MdOutlinePlaylistPlay size={60} color='white' />
+          
+          <div className='playlists'>
+            
+            {playlists?.map((playlist) => (
+              
+                  <div
+                    className="playlist-card"
+                    onClick={() => playPlaylist(playlist.id)}
+                  >
+                    <img
+                      src={playlist.images[0].url}
+                      className="playlist-image"
+                      alt="playlist"
+                    />
 
-            <div className="playlist-fade">
-              <IconContext.Provider value={{ size: '50px', color: '#E99D72' }}>
-                <AiFillPlayCircle />
-              </IconContext.Provider>
-            </div>
-            <p className="playlist-name">{playlist.name}</p>
+                    <div className="playlist-fade">
+                      
+                    </div>
+                    <p className="playlist-name">{playlist.name}</p>
+                  </div>
+                ))}
           </div>
-        ))}
-        {/* Render tracks */}
-        {/* {tracks?.map((track) => (
-          <div className="track-card">
-            <p className="track-name">{track.name}</p>
-          </div>
-        ))} */}
+        </div>
+      
+
+
+        <div className="fav">
+        <CiHeart size={50} color='white' />
+          <Favourites />
+        </div>
+        
       </div>
     </div>
   );

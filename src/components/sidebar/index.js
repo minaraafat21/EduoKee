@@ -6,7 +6,7 @@ import { GoHeartFill } from "react-icons/go";
 import { LuMusic2 } from "react-icons/lu";
 import { IoIosLogOut } from "react-icons/io";
 import apiClient from "../../spotify";
-import Library from '../../Pages/library/library';
+
 
 
 export default function Sidebar() {
@@ -48,17 +48,15 @@ export default function Sidebar() {
   return (
     <div className='sidebar-container'>
       <img src={image} className= "profile-picture" alt='avatar' onClick={handleProfileClick} />
-      
-      <div className='sidebar-button'>
-        <SidebarButton title="library" to="/" icon={<IoHome />} />
-        {/* <SidebarButton title="trending" to="/trending" icon={<IoIosTrendingUp />} /> */}
-        <SidebarButton title="favorites" to="/favorites" icon={<GoHeartFill />} />
-        <SidebarButton title="player" to="/player" icon={<LuMusic2 />} />
-      </div>
-      
-        
-      
-      <SidebarButton title="logout" icon={<IoIosLogOut />} onClick={handleLogout} />
+
+      {isSidebarVisible && (
+      <><div className='sidebar-button'>
+          <SidebarButton title="library" to="/" icon={<IoHome />} onClick={handleProfileClick} />
+          {/* <SidebarButton title="trending" to="/trending" icon={<IoIosTrendingUp />} /> */}
+          {/* <SidebarButton title="favorites" to="/favorites" icon={<GoHeartFill />} />
+          <SidebarButton title="player" to="/player" icon={<LuMusic2 />} /> */}
+        </div><SidebarButton title="logout" icon={<IoIosLogOut />} onClick={handleLogout} /></>
+      )}
     </div>
   )
  

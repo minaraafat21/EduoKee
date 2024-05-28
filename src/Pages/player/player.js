@@ -6,14 +6,12 @@ import SongCard from '../../components/songCard/songCard';
 import Queue from '../../components/queue/queue';
 import AudioPLayer from '../../components/audioPlayer';
 import Widgets from '../../components/widgets';
-import CardWidget from '../../components/widgets/multi-pageCard';
-import WidgetCardLyrics from '../../components/widgets/widgetCardLyrics';
 import SidebarButton from '../../components/sidebar/sidebarButton';
 import { TbMicrophone2 } from 'react-icons/tb';
 import { fetchLyrics } from '../../components/widgets/index.js';
 import { findBestMatch } from '../../test.js';
 import LyricsComparer from '../../components/widgets/lyricComperator.js';
-import ProgressCircle from '../../components/audioPlayer/score.js';
+import ScoreCircle from '../../components/audioPlayer/score.js';
 // import { transcript } from '../../components/sidebar/index.js';
 
 export default function Player() {
@@ -94,7 +92,8 @@ export default function Player() {
 
   const compareLyricsWithTranscript = () => {
     const { similarity, startIndex } = findBestMatch(lyrics, transcript);
-    console.log('Similarity:', similarity);
+    // console.log('Similarity:', similarity);
+    // setClientToken(similarity);
     const bestmatch = lyrics.substring(
       startIndex,
       startIndex + transcript.length
@@ -135,16 +134,7 @@ export default function Player() {
             currentTrackName={currentTrack?.name}
             artistName={currentTrack?.album?.artists[0].name}
           />
-          {/* <div className="audio-player">
-          <AudioPLayer
-            currentTrack={currentTrack}
-            total={tracks}
-            currentIndex={currentIndex}
-            setCurrentIndex={setCurrentIndex}
-          />
           
-
-        </div> */}
         </div>
 
         <div className="right-player-body">
@@ -157,19 +147,16 @@ export default function Player() {
             }
           />
           <Queue tracks={tracks} setCurrentIndex={setCurrentIndex} />
-          {/* <SidebarButton onClick={startSpeechToText} icon ={<TbMicrophone2 />} ></SidebarButton>
-        <SidebarButton onClick={compareLyricsWithTranscript} icon ={<TbMicrophone2 />} ></SidebarButton> */}
-          {/* <p>{compareLyricsWithTranscript}</p> */}
           <LyricsComparer
             lyrics={compareLyricsWithTranscript().toString()}
             transcript={transcript}
           />
-          <WidgetCardLyrics title="transcript" lyrics={transcript} />
+          {/* <WidgetCardLyrics title="transcript" lyrics={transcript} />
           <WidgetCardLyrics
             title="lyrics"
             lyrics={compareLyricsWithTranscript().toString()}
-          />
-          <ProgressCircle score={compareLyricsWithTranscript2() * 100} />
+          /> */}
+          <ScoreCircle score={compareLyricsWithTranscript2() * 100} />
         </div>
       </div>
       <div className="footer">

@@ -1,13 +1,13 @@
 import React from 'react';
 import './score.css';
 
-const ProgressCircle = ({ score }) => {
+const ScoreCircle = ({ score }) => {
   const radius = 50;
   const circumference = 2 * Math.PI * radius;
   const offset = circumference - (score / 100) * circumference;
 
   return (
-    <div className="progress-circle">
+    <div className="score-circle">
       <svg width="120" height="120">
         <circle
           className="background"
@@ -33,4 +33,4 @@ const ProgressCircle = ({ score }) => {
   );
 };
 
-export default ProgressCircle;
+export default ScoreCircle;
