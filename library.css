@@ -1,0 +1,153 @@
+  .screen-container {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    /* align-items: Flex-start; */
+    /* justify-content: center; */
+    
+  }
+  /* .playlist-row{
+    display: flex;
+    flex-direction: row;
+    
+    overflow: hidden;
+    align-items: center;
+  } */
+  .library-body {
+    width: 100%;
+    height: 100%;
+    padding: 0%;
+    display: flex;
+    flex-direction: row;
+    
+    flex-wrap: wrap;
+    /* align-items: flex-start; */
+  }
+  .fav {
+    width: 90%; /* Adjust this value as needed */
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+    justify-content: center;
+    /* align-items: flex-start; */
+  }
+  .playlists{
+    width: 25rem;
+    max-height: 20rem;
+    
+    
+    
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .playlist-image {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  .playlist-card {
+    /* position: relative; */
+    width: 12rem !important;
+    height: 15rem !important; 
+   
+    
+    cursor: pointer;
+  }
+  
+  
+  .playlist-card:hover {
+    transform: scale(1.5);
+  }
+  
+  .playlist-card:hover .playlist-fade {
+    opacity: 1;
+  }
+  
+  .playlist-image {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 15px;
+  }
+  
+  .playlist-name {
+    font-weight: 800;
+    font-size: 14px;
+    color: #c4d0e3;
+    margin: 5px 0px 10px;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  
+  /* .playlist-subtitle {
+    font-weight: 400;
+    font-size: 12px;
+    margin: 0px;
+    color: #c4d0e37c;
+  } */
+  
+  .playlist-fade {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    width: 84%;
+    height: 25%;
+    border-radius: 20px;
+    background: linear-gradient(
+      180deg,
+      rgba(54, 69, 98, 0) 10%,
+      rgba(54, 69, 98, 1) 100%
+    );
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 8%;
+    transition: 0.5s ease;
+  }
+
+/* In your main CSS file or in the component file */
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+.slick-dots {
+  bottom: -20px;
+}
+
+.slick-dots li button:before {
+  font-size: 12px;
+  color: white;
+}
+
+.slick-dots li.slick-active button:before {
+  color: white;
+}
+
+.custom-slider .slick-slide {
+  transition: transform 0.3s ease;
+  
+}
+
+.custom-slider{
+  margin-right: 5rem;
+  margin-left: 5rem;
+  
+  /* padding: 17%;
+  padding-left: 17%; */
+  /* padding-right: 10%;
+  padding-left: 10%; */
+}
+
+
+
+
+.custom-slider .slick-slide:not(.slick-center) .playlist-card {
+  transform: scale(0.8);
+  opacity: 0.7;
+}
