@@ -38,7 +38,7 @@ export default function Library() {
       <div className="library-body">
         {/* <CardWidget pages={pages} /> */}
         <div className='playlist-row'>
-        <MdOutlinePlaylistPlay size={60} color='white' />
+          <MdOutlinePlaylistPlay size={50} color='white' />
           
           <div className='playlists'>
             

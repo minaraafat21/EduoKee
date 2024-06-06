@@ -6,6 +6,8 @@ import { GoHeartFill } from "react-icons/go";
 import { LuMusic2 } from "react-icons/lu";
 import { IoIosLogOut } from "react-icons/io";
 import apiClient from "../../spotify";
+import logo from './Eduokee.svg';
+import { Link } from 'react-router-dom';
 
 
 
@@ -18,6 +20,7 @@ export default function Sidebar() {
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdLAY3C19kL0nV2bI_plU3_YFCtra0dpsYkg&usqp=CAU"
   );
 
+  
 
 
   
@@ -38,23 +41,32 @@ export default function Sidebar() {
 
 
   const [isSidebarVisible, setSidebarVisible] = useState(false);
+  const [isProfileVisible, setProfileVisible] = useState(true);
   const handleProfileClick = () => {
     setSidebarVisible(!isSidebarVisible);
+    setProfileVisible(false);
   };
+
 
 
   
   
   return (
     <div className='sidebar-container'>
-      <img src={image} className= "profile-picture" alt='avatar' onClick={handleProfileClick} />
+      <Link to = "/"  className='logo-container'>
+        <img src={logo}  alt="logo" />
+        
+      </Link>
+      {isProfileVisible && (
+              <>
+        <img src={image} className= "profile-picture" alt='avatar' onClick={handleProfileClick} />
+        </>
+      )}
+         
+      
 
       {isSidebarVisible && (
       <><div className='sidebar-button'>
-          <SidebarButton title="library" to="/" icon={<IoHome />} onClick={handleProfileClick} />
-          {/* <SidebarButton title="trending" to="/trending" icon={<IoIosTrendingUp />} /> */}
-          {/* <SidebarButton title="favorites" to="/favorites" icon={<GoHeartFill />} />
-          <SidebarButton title="player" to="/player" icon={<LuMusic2 />} /> */}
         </div><SidebarButton title="logout" icon={<IoIosLogOut />} onClick={handleLogout} /></>
       )}
     </div>

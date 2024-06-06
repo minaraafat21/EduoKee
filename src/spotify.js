@@ -2,8 +2,8 @@ import axios from 'axios';
 
 const authEndpoint = 'https://accounts.spotify.com/authorize?';
 const clientId = 'a1ed86ec4b344fff8c143015130da85d';
-const redirectUri = 'https://eduokee.me';
-// const redirectUri = 'http://localhost:3000/';
+// const redirectUri = 'https://eduokee.me';
+const redirectUri = 'http://localhost:3000/';
 const scopes = [
   'user-library-read',
   'playlist-read-private',
@@ -25,20 +25,12 @@ export const setClientToken = (token) => {
   });
 };
 
-
 apiClient.interceptors.response.use(
-  (response) => response, // Simply return the response if it was successful
-  async (error) => {
-    const originalRequest = error.config;
-    if (error.response.status === 401 && !originalRequest._retry) {
-      originalRequest._retry = true;
-      const accessToken = await refreshAccessToken(); // Function to refresh the access token
-      if (accessToken) {
-        localStorage.setItem('access_token', accessToken);
-        apiClient.defaults.headers.common['Authorization'] =
-          'Bearer ' + accessToken;
-        return apiClient.request(originalRequest);
-      }
+  (response) => response,
+  (error) => {
+    if (error.response && error.response.status === 401) {
+      localStorage.removeItem('token');
+      localStorage.removeItem('access_token');
     }
     return Promise.reject(error);
   }

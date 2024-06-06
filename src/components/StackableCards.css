@@ -1,0 +1,28 @@
+.stackable-cards {
+    position: relative;
+  }
+  
+  .card {
+    position: absolute;
+    transition: transform 0.5s;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card.active {
+    transform: translateY(-50%) scale(1.1);
+  }
+  
+  button {
+    position: absolute;
+    bottom: 10px;
+  }
+  
+  button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  

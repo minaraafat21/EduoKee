@@ -8,7 +8,7 @@ import Feed from '../feed';
 import './home.css';
 import SideBar from '../../components/sidebar';
 import Login from '../authorize/login';
-import { setClientToken, getRefreshToken } from '../../spotify';
+import { setClientToken } from '../../spotify';
 import AudioPLayer from '../../components/audioPlayer';
 
 export default function HomePage() {
@@ -35,7 +35,7 @@ export default function HomePage() {
     } else {
       console.log('No token found');
       // refresh token
-      getRefreshToken(); // maybe i should redirect to login dont know yet
+       // maybe i should redirect to login dont know yet
     }
   }, []);
 

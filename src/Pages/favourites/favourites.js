@@ -47,14 +47,14 @@ export default function Favourites() {
       <div className="library-body">
         {/* <CardWidget pages={pages} /> */}
         {tracks?.map((track) => (
-          <div className="playlist-card" onClick={() => playPlaylist(track.id)}> 
-          {/* just gonna steal the style */}
-          <img
-              src={track.album.images[0].url}
-              className="playlist-image"
-              alt="playlist"
-            />
-            
+          <div className="track-card" onClick={() => playPlaylist(track.id)}> 
+            {/* just gonna steal the style */}
+            <img
+                src={track.album.images[0].url}
+                className="playlist-image-track"
+                alt="playlist"
+              />
+              
             <p className="playlist-name">{track.name}</p>
 
           </div>

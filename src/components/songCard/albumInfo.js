@@ -2,11 +2,7 @@ import React from "react";
 import "./albumInfo.css";
 
 export default function AlbumInfo({ album }) {
-  const artists = [];
-  album?.artists?.forEach((element) => {
-    artists.push(element.name);
-  });
-
+  const artists = album?.artists?.map((element) => element.name) || [];
   return (
     <div className="albumInfo-card">
       <div className="albumName-container">

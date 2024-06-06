@@ -1,5 +1,5 @@
   .screen-container {
-    display: flex;
+    
     flex-direction: column;
     overflow: hidden;
     /* align-items: Flex-start; */
@@ -9,8 +9,8 @@
   .playlist-row{
     display: flex;
     flex-direction: row;
-    /* flex-wrap: wrap; */
-    overflow: hidden;
+    height: 40%;
+    overflow-y: hidden;
     align-items: center;
   }
   .library-body {
@@ -19,20 +19,46 @@
     padding: 0%;
     display: flex;
     flex-direction: row;
-    
-    flex-wrap: wrap;
+    overflow-x: auto;
     /* align-items: flex-start; */
   }
-  .playlists, .fav {
-    width: 100%; /* Adjust this value as needed */
-    height: 20rem;
-    /* padding: 3%; */
+  .fav {
+    width: 90%; /* Adjust this value as needed */
+    height: 100%;
+    max-height: 60%;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    overflow-y: hidden;
+    overflow-x: hidden;
     justify-content: center;
     /* align-items: flex-start; */
+  }
+  .playlists{
+    max-height: 20rem!important;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    
+    
+    
+    
+    
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .playlist-image {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  .playlist-card {
+    /* position: relative; */
+    width: 12rem !important;
+    height: 15rem !important; 
+   
+    
+    cursor: pointer;
   }
   
   
@@ -89,3 +115,43 @@
     padding: 8%;
     transition: 0.5s ease;
   }
+
+/* In your main CSS file or in the component file */
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+.slick-dots {
+  bottom: -20px;
+}
+
+.slick-dots li button:before {
+  font-size: 12px;
+  color: white;
+}
+
+.slick-dots li.slick-active button:before {
+  color: white;
+}
+
+.custom-slider .slick-slide {
+  transition: transform 0.3s ease;
+  
+}
+
+.custom-slider{
+  margin-right: 5rem;
+  margin-left: 5rem;
+  
+  /* padding: 17%;
+  padding-left: 17%; */
+  /* padding-right: 10%;
+  padding-left: 10%; */
+}
+
+
+
+
+.custom-slider .slick-slide:not(.slick-center) .playlist-card {
+  transform: scale(0.8);
+  opacity: 0.7;
+}
