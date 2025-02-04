@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+# EduoKee
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+EduoKee is a **lyrical learning platform** that merges entertainment with education to enhance language learning. It helps users improve their pronunciation and accent through interactive music-based exercises.
 
-## Available Scripts
+## 🌟 Features
 
-In the project directory, you can run:
+- **User Authentication:** Secure login for personalized experiences.
+- **Spotify Integration:** Fetch saved playlists and liked songs directly from Spotify.
+- **Music Player:** 30-second track playback powered by Spotify API.
+- **Lyric Fetching:** Get song lyrics from the Lyrics.ovh API.
+- **Speech-to-Text Conversion:** Record your singing and convert it to text using Google Cloud Speech API.
+- **Scoring Algorithm:** Compare your singing with the original lyrics using Levenshtein Distance to score out of 100.
+- **Word Search:** Clickable lyrics for quick definitions and pronunciations via Google.
+- **Mobile-Friendly:** Optimized for both desktop and mobile views.
 
-### `npm start`
+## 🚀 Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **React JS** - Front-end framework for dynamic UI.
+- **Node JS** - Back-end environment for server-side operations.
+- **Spotify Web API** - To fetch user playlists and song data.
+- **Google Cloud Speech API** - For accurate speech recognition.
+- **Lyrics.ovh API** - To fetch lyrics of songs.
+- **Hosting:** Namecheap domain & GitHub Pages.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Installation & Setup
 
-### `npm test`
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/minaraafat21/EduoKee.git
+   cd EduoKee
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-### `npm run build`
+3. **Environment Setup:**
+   - Configure Spotify and Google Cloud credentials in an `.env` file.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. **Run the development server:**
+   ```bash
+   npm start
+   ```
+   Visit [http://localhost:3000](http://localhost:3000) to explore EduoKee.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 📊 Scoring Algorithm
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Levenshtein Distance:** Measures the difference between the user's input and the original lyrics.
+- **Score Calculation:** Outputs a similarity score out of 100.
 
-### `npm run eject`
+## ⚡ Challenges & Learning Outcomes
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **React Mastery:** Gained hands-on experience with React for dynamic UI development.
+- **Deployment Experience:** First-time deploying on GitHub Pages with Namecheap integration.
+- **Spotify API Constraints:** Limited to developer accounts in development mode.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📈 Future Enhancements
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Full Spotify API integration for public users.
+- Advanced speech analysis features.
+- Enhanced UI/UX for better engagement.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🌍 Live Demo
 
-## Learn More
+Check out EduoKee: [https://eduokee.me](https://eduokee.me)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🤝 Contributing
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Contributions are welcome! Please fork the repo, create a feature branch, and submit a pull request.
 
-### Code Splitting
+## 📄 License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+This project is licensed under the [MIT License](LICENSE).
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+*EduoKee - Where Music Meets Language Learning!*
