@@ -2,6 +2,13 @@
 
 EduoKee is a **lyrical learning platform** that merges entertainment with education to enhance language learning. It helps users improve their pronunciation and accent through interactive music-based exercises.
 
+## 🎥 Video Demo
+
+Check out the demo video below to see EduoKee in action:
+
+[![EduoKee Demo](screenshots/demo-thumbnail.png)](https://github.com/user-attachments/assets/3ed942a8-eaf1-446a-a4ec-70df4775753a)
+
+
 ## 🌟 Features
 
 - **User Authentication:** Secure login for personalized experiences.
@@ -21,6 +28,11 @@ EduoKee is a **lyrical learning platform** that merges entertainment with educat
 - **Google Cloud Speech API** - For accurate speech recognition.
 - **Lyrics.ovh API** - To fetch lyrics of songs.
 - **Hosting:** Namecheap domain & GitHub Pages.
+
+## 📊 Scoring Algorithm
+
+- **Levenshtein Distance:** Measures the difference between the user's input and the original lyrics.
+- **Score Calculation:** Outputs a similarity score out of 100.
 
 ## 🛠️ Installation & Setup
 
@@ -44,26 +56,23 @@ EduoKee is a **lyrical learning platform** that merges entertainment with educat
    ```
    Visit [http://localhost:3000](http://localhost:3000) to explore EduoKee.
 
-## 📊 Scoring Algorithm
 
-- **Levenshtein Distance:** Measures the difference between the user's input and the original lyrics.
-- **Score Calculation:** Outputs a similarity score out of 100.
+## 📷 Screenshots
 
-## ⚡ Challenges & Learning Outcomes
+### Home Page
+![Home Page](screenshots/home.png)
 
-- **React Mastery:** Gained hands-on experience with React for dynamic UI development.
-- **Deployment Experience:** First-time deploying on GitHub Pages with Namecheap integration.
-- **Spotify API Constraints:** Limited to developer accounts in development mode.
+### Music Player
+![Music Player](screenshots/player.png)
+
+### Scoring Results
+![Scoring Results](screenshots/scoring.png)
 
 ## 📈 Future Enhancements
 
 - Full Spotify API integration for public users.
 - Advanced speech analysis features.
 - Enhanced UI/UX for better engagement.
-
-## 🌍 Live Demo
-
-Check out EduoKee: [https://eduokee.me](https://eduokee.me)
 
 ## 🤝 Contributing
 
